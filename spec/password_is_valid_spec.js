@@ -1,6 +1,6 @@
 const { passwordIsValid } = require("../src/password_checker");
 
-describe("The function should throw an error if the password is not valid", function () {
+describe("The function 'passwordIsValid' should throw an error if the password is not valid", function () {
   it("should test if password exist", function () {
     expect(function () {
       passwordIsValid(null);
