@@ -27,27 +27,27 @@ function passwordIsValid(password) {
 
 function passwordIsOk(password) {
   var conditionMetBoolean = false,
-    countCounditionsMet = 0;
+    countConditionsMet = 0;
 
   if (password != "") {
-    countCounditionsMet = countCounditionsMet + 1;
+    countConditionsMet = countConditionsMet + 1;
   }
   if (atLeastNineLettersLong.test(password)) {
-    countCounditionsMet = countCounditionsMet + 1;
+    countConditionsMet = countConditionsMet + 1;
   }
   if (lowercase.test(password)) {
-    countCounditionsMet = countCounditionsMet + 1;
+    countConditionsMet = countConditionsMet + 1;
   }
   if (uppercase.test(password)) {
-    countCounditionsMet = countCounditionsMet + 1;
+    countConditionsMet = countConditionsMet + 1;
   }
   if (digits.test(password)) {
-    countCounditionsMet = countCounditionsMet + 1;
+    countConditionsMet = countConditionsMet + 1;
   }
   if (specialChar.test(password)) {
-    countCounditionsMet = countCounditionsMet + 1;
+    countConditionsMet = countConditionsMet + 1;
   }
-  if (countCounditionsMet >= 3) {
+  if (countConditionsMet >= 3) {
     conditionMetBoolean = true;
   }
   if (password == "" && !atLeastNineLettersLong.test(password)) {
