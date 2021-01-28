@@ -9,11 +9,11 @@
   "license": "ISC",
   "dependencies": {
     "jasmine": "^3.5.0",
-    "jsdom": "^16.2.2"
+    "jsdom": "^16.2.2",
+    "winston": "^3.3.3"
   },
   "directories": {
     "lib": "lib"
   },
-  "devDependencies": {},
   "description": ""
 }
