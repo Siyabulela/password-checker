@@ -4,9 +4,12 @@ const logger = winston.createLogger({
   format: winston.format.json(),
   defaultMeta: { service: "user-service" },
   transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: "error.log", level: "error" }),
+    new winston.transports.Console({level: 'debug'}),
+    new winston.transports.File({ filename: "log/error.log", level: "error" }),
   ],
+  exceptionHandlers: [
+    new winston.transports.File({ filename: 'log/error.log'})
+  ]
 });
 
 let digits = /[0-9]/,
@@ -70,13 +73,11 @@ function passwordIsOk(password) {
 
   if (countCounditionsMet > 2) {
     conditionMetBoolean = true;
-    console.debug("User password is ok");
+    logger.debug("User password is ok");
   } else {
-    console.debug("User password is not ok");
+    logger.debug("User password is not ok");
   }
   return conditionMetBoolean;
 } 
-
-passwordIsOk()
 
 module.exports = { passwordIsValid, passwordIsOk };
